@@ -1493,6 +1493,7 @@ creat_v2ray_json() {
 
 		case "$ss_basic_v2ray_network" in
 		tcp)
+			ss_basic_v2ray_network_security="xtls"
 			if [ "$ss_basic_v2ray_headtype_tcp" == "http" ]; then
 				local tcp="{
 					\"connectionReuse\": true,
@@ -1637,6 +1638,7 @@ creat_v2ray_json() {
 										"id": "$ss_basic_v2ray_uuid",
 										"alterId": $ss_basic_v2ray_alterid,
 										"encryption": "none",
+										"flow":"xtls-rprx-splice",
 										"security": "$ss_basic_v2ray_security"
 									}
 								]
@@ -1648,6 +1650,7 @@ creat_v2ray_json() {
 						"network": "$ss_basic_v2ray_network",
 						"security": "$ss_basic_v2ray_network_security",
 						"tlsSettings": $tls,
+						"xtlsSettings": $tls,
 						"tcpSettings": $tcp,
 						"kcpSettings": $kcp,
 						"wsSettings": $ws,
