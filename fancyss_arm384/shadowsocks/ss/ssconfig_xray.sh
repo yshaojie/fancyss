@@ -1814,7 +1814,9 @@ creat_v2ray_json() {
 			echo_date "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 		fi
 	fi
-
+	if [ "$ss_basic_v2ray_use_json" == "1" ]; then
+    		echo "$ss_basic_v2ray_json" | base64_decode >"$V2RAY_CONFIG_FILE"
+  	fi
 	echo_date 测试V2Ray配置文件.....
 	cd /koolshare/bin
 	result=$(v2ray -test -config="$V2RAY_CONFIG_FILE" | grep "Configuration OK.")
