@@ -1638,7 +1638,7 @@ creat_v2ray_json() {
 										"id": "$ss_basic_v2ray_uuid",
 										"alterId": $ss_basic_v2ray_alterid,
 										"encryption": "none",
-										"flow":"xtls-rprx-splice",
+										"flow":"",
 										"security": "$ss_basic_v2ray_security"
 									}
 								]
